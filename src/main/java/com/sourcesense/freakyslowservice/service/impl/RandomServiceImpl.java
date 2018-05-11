@@ -37,4 +37,9 @@ public class RandomServiceImpl implements RandomService {
 				.build();
 		return randomObject;
 	}
+
+	@Override
+	public Mono<RandomObject> getRandomSlowObject() {
+		return Mono.just(randomObjectFactory()).delayElement(Duration.ofSeconds(10));
+	}
 }

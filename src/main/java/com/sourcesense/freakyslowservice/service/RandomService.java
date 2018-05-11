@@ -9,6 +9,8 @@ public interface RandomService {
 	
 	Mono<RandomObject> getRandomObject();
 
-	Flux<RandomObject> getFluxOfRandomObject(Long limit); 
+	Flux<RandomObject> getFluxOfRandomObject(Long limit);
+
+	Mono<RandomObject> getRandomSlowObject(); 
 
 }

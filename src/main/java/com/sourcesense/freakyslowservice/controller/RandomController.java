@@ -22,6 +22,11 @@ public class RandomController {
 		return randomService.getRandomObject();
 	}
 	
+	@GetMapping("/random-slow")
+	public Mono<RandomObject> getRandomSlowObject(){
+		return randomService.getRandomSlowObject();
+	}
+	
 	@GetMapping("/random/{limit}")
 	public Flux<RandomObject> getFluxOfRandomObject(@PathVariable(required=true,name="limit") Long limit){
 		return randomService.getFluxOfRandomObject(limit);
